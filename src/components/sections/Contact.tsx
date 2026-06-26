@@ -46,7 +46,7 @@ const Contact = () => {
           <div>
             <label className='block text-sm font-semibold mb-4'>Services</label>
 
-            <div className='grid grid-cols-2 gap-y-4 text-sm'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-y-4 text-sm'>
               <label className='flex items-center gap-3'>
                 <input
                   type='checkbox'

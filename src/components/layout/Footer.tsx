@@ -1,27 +1,23 @@
 const Footer = () => {
   return (
-    <footer className='py-16'>
-      <div className='max-w-5xl mx-auto border border-gray-200 rounded-2xl p-10'>
-        <div className='flex justify-between items-start'>
-          <h2 className='text-4xl font-bold leading-tight'>
-            LET&apos;S DISCUSS <br />
-            YOUR IDEAS
-          </h2>
-
+    <footer className='pt-10 pb-12'>
+      <div className='max-w-[393px] lg:max-w-[1160px] mx-auto border border-gray-200 rounded-2xl px-6 py-10 lg:px-14 lg:py-12'>
+        <div className='flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8'>
           <div className='flex items-center gap-2'>
-            <img
-              src='/logo.png'
-              alt='logo'
-              className='w-8 h-8 object-contain'
-            />
-            <span className='font-bold text-xl'>Your Logo</span>
+            <img src='/logo.png' alt='logo' className='w-8 h-8' />
+            <h3 className='font-bold text-[20px]'>Your Logo</h3>
           </div>
+
+          <h2 className='text-[32px] lg:text-4xl font-bold leading-[40px] tracking-[-1px] lg:order-1'>
+            LET’S DISCUSS YOUR <br />
+            IDEAS
+          </h2>
         </div>
 
-        <hr className='my-10 border-gray-200' />
+        <div className='border-t border-gray-200 my-10'></div>
 
-        <div className='flex justify-between items-center'>
-          <ul className='flex gap-8 text-sm'>
+        <div className='flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8'>
+          <ul className='flex flex-col lg:flex-row gap-6 lg:gap-8 text-[16px]'>
             <li>About</li>
             <li>Service</li>
             <li>Projects</li>
@@ -29,22 +25,19 @@ const Footer = () => {
             <li>FAQ</li>
           </ul>
 
-          <div className='flex gap-3'>
-            <div className='w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center font-semibold'>
+          <div className='flex items-center gap-4'>
+            <span className='w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center font-bold'>
               f
-            </div>
-
-            <div className='w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center font-semibold'>
+            </span>
+            <span className='w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center font-bold'>
               ◎
-            </div>
-
-            <div className='w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center font-semibold'>
+            </span>
+            <span className='w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center font-bold'>
               in
-            </div>
-
-            <div className='w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center font-semibold'>
+            </span>
+            <span className='w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center font-bold'>
               ♪
-            </div>
+            </span>
           </div>
         </div>
       </div>
