@@ -16,10 +16,12 @@ const industries = [
 const Industry = () => {
   return (
     <section className='py-20 max-w-5xl mx-auto'>
-      <div className='mb-12'>
-        <h2 className='text-4xl font-bold mb-3'>Built for Your Industry</h2>
+      <div className='mb-10'>
+        <h2 className='text-[36px] lg:text-4xl font-bold leading-tight mb-5'>
+          Built for Your Industry
+        </h2>
 
-        <p className='text-gray-500 text-sm'>
+        <p className='text-gray-500 text-[16px] leading-[28px] max-w-[361px]'>
           We’ve helped companies across industries launch smarter, faster, and
           more securely.
         </p>
@@ -41,8 +43,8 @@ const Industry = () => {
           ))}
         </div>
 
-        <div>
-          <p className='text-gray-700 text-sm leading-relaxed mb-8'>
+        <div className='mt-10'>
+          <p className='text-[#0A0D12] text-sm font-medium leading-7 mb-8'>
             We build secure, scalable, and compliant fintech solutions — from
             digital wallets to core banking systems — tailored to modern
             financial needs.
@@ -51,7 +53,7 @@ const Industry = () => {
           <img
             src='/industry.png'
             alt='industry'
-            className='w-full rounded-2xl object-cover'
+            className='w-full h-[220px] object-cover rounded-2xl lg:h-[320px]'
           />
         </div>
       </div>
