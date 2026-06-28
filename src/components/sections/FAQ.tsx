@@ -29,41 +29,54 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section className='py-20 max-w-5xl mx-auto'>
-      <div className='grid md:grid-cols-2 gap-10 items-start border-b border-gray-200 pb-8'>
-        <h2 className='text-4xl font-bold leading-tight'>
-          Need Help? Start <br />
-          Here.
-        </h2>
+    <section
+      id='faq'
+      className='bg-black px-5 py-16 lg:px-[120px] lg:py-[80px]'
+    >
+      <div className='mx-auto flex max-w-[1200px] flex-col gap-[48px]'>
+        <div className='grid gap-6 border-b border-white/10 pb-10 lg:grid-cols-[1fr_320px] lg:items-center'>
+          <h2 className='max-w-[360px] text-[32px] font-bold leading-[1.25] text-white lg:text-[36px]'>
+            Need Help? Start
+            <br />
+            Here.
+          </h2>
 
-        <p className='text-gray-500 text-sm md:text-right'>
-          Everything you need to <br />
-          know — all in one place.
-        </p>
-      </div>
-
-      <div className='grid md:grid-cols-[1fr_280px] gap-12 mt-8'>
-        <div>
-          {faqs.map((faq) => (
-            <div key={faq.question} className='border-b border-gray-200 py-5'>
-              <div className='flex justify-between items-center'>
-                <h3 className='font-semibold text-lg'>{faq.question}</h3>
-
-                <span className='text-xl'>{faq.open ? '−' : '+'}</span>
-              </div>
-
-              {faq.open && (
-                <p className='text-gray-500 text-sm mt-4'>{faq.answer}</p>
-              )}
-            </div>
-          ))}
+          <p className='max-w-[260px] text-[15px] leading-7 text-white/50 lg:justify-self-end'>
+            Everything you need to know — all in one place.
+          </p>
         </div>
 
-        <img
-          src='/consultation.png'
-          alt='consultation'
-          className='w-[329px] h-[453px] object-contain rounded-3xl'
-        />
+        <div className='grid gap-10 lg:grid-cols-[1fr_321px] lg:items-start'>
+          <div>
+            {faqs.map((faq) => (
+              <div key={faq.question} className='border-b border-white/10 py-5'>
+                <div className='flex items-center justify-between gap-6'>
+                  <h3 className='text-[18px] font-bold text-white'>
+                    {faq.question}
+                  </h3>
+
+                  <span className='text-[24px] leading-none text-white'>
+                    {faq.open ? '−' : '+'}
+                  </span>
+                </div>
+
+                {faq.open && (
+                  <p className='mt-4 max-w-[820px] text-[15px] leading-7 text-white/45'>
+                    {faq.answer}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <aside className='w-full lg:w-[321px]'>
+            <img
+              src='/consultation.png'
+              alt='Free consultation'
+              className='w-full rounded-[22px] object-contain'
+            />
+          </aside>
+        </div>
       </div>
     </section>
   );

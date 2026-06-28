@@ -2,51 +2,57 @@ const portfolios = [
   {
     image: '/portfolio-1.png',
     category: 'Landing Page',
-    title: 'Portfolio 1',
+    title: 'Portofolio 1',
   },
   {
     image: '/portfolio-2.png',
     category: 'Landing Page',
-    title: 'Portfolio 2',
+    title: 'Portofolio 2',
   },
   {
     image: '/portfolio-3.png',
     category: 'Landing Page',
-    title: 'Portfolio 3',
+    title: 'Portofolio 3',
   },
 ];
 
 const Portfolio = () => {
   return (
-    <section className='pt-12 pb-16 lg:py-20'>
-      <div className='max-w-[361px] lg:max-w-[1160px] mx-auto'>
-        <div className='mb-10 text-left lg:text-center'>
-          <h2 className='text-[36px] lg:text-4xl font-bold leading-tight'>
-            From Vision to Launch! <br />
-            Projects We’re Proud Of
+    <section
+      id='projects'
+      className='bg-black px-5 py-16 lg:px-[140px] lg:py-[80px]'
+    >
+      <div className='mx-auto flex max-w-[1160px] flex-col gap-12 lg:gap-[64px]'>
+        <div className='text-center'>
+          <h2 className='text-[28px] font-bold leading-tight text-white lg:text-[34px]'>
+            From Vision to Launch! Projects We’re Proud Of
           </h2>
 
-          <p className='text-gray-500 text-[16px] leading-[28px] mt-4 lg:max-w-3xl lg:mx-auto'>
+          <p className='mx-auto mt-4 max-w-[760px] text-[13px] leading-6 text-white/45'>
             Take a closer look at our recent work powering startups,
             enterprises, and everything in between.
           </p>
         </div>
 
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-6'>
+        <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-5'>
           {portfolios.map((portfolio) => (
-            <div key={portfolio.title}>
-              <img
-                src={portfolio.image}
-                alt={portfolio.title}
-                className='w-full h-[420px] lg:h-[373px] object-cover rounded-2xl'
-              />
+            <article key={portfolio.title}>
+              <div className='overflow-hidden rounded-[14px]'>
+                <img
+                  src={portfolio.image}
+                  alt={portfolio.title}
+                  className='h-[260px] w-full object-cover lg:h-[300px]'
+                />
+              </div>
 
-              <p className='text-[#FF623E] text-[16px] mt-4'>
+              <p className='mt-5 text-[13px] font-medium text-[#FF623E]'>
                 {portfolio.category}
               </p>
 
-              <h3 className='text-[24px] font-bold mt-2'>{portfolio.title}</h3>
-            </div>
+              <h3 className='mt-2 text-[17px] font-bold text-white'>
+                {portfolio.title}
+              </h3>
+            </article>
           ))}
         </div>
       </div>

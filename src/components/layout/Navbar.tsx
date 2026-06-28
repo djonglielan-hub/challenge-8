@@ -1,70 +1,41 @@
-import { useState } from 'react';
-
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <>
-      <nav className='flex justify-between items-center py-6'>
+    <header className='absolute left-0 top-0 z-30 w-full'>
+      <div className='mx-auto flex max-w-[1120px] items-center justify-between px-5 py-5 lg:px-0'>
         <div className='flex items-center gap-2'>
-          <img src='/logo.png' alt='logo' className='w-8 h-8 object-contain' />
-          <h1 className='font-bold text-xl'>Your Logo</h1>
+          <div className='h-5 w-5 rounded-md bg-orange-500' />
+          <span className='text-sm font-semibold text-white'>Your Logo</span>
         </div>
 
-        <ul className='hidden lg:flex gap-8 text-sm'>
-          <li>About</li>
-          <li>Service</li>
-          <li>Portfolio</li>
-          <li>Testimonials</li>
-          <li>FAQ</li>
-        </ul>
+        <nav className='hidden items-center gap-9 text-xs text-white/80 lg:flex'>
+          <a href='#about' className='hover:text-orange-500'>
+            About
+          </a>
+          <a href='#service' className='hover:text-orange-500'>
+            Service
+          </a>
+          <a href='#projects' className='hover:text-orange-500'>
+            Projects
+          </a>
+          <a href='#testimonials' className='hover:text-orange-500'>
+            Testimonials
+          </a>
+          <a href='#faq' className='hover:text-orange-500'>
+            FAQ
+          </a>
+        </nav>
 
-        <button className='hidden lg:block bg-[#FF623E] text-white px-12 py-3 rounded-full text-sm'>
-          Let&apos;s Talk
+        <button className='hidden rounded-full bg-orange-500 px-8 py-2.5 text-xs font-semibold text-white lg:block'>
+          Let’s Talk
         </button>
 
-        <button
-          onClick={() => setIsOpen(true)}
-          className='lg:hidden text-3xl leading-none'
-        >
-          ☰
+        <button className='flex flex-col gap-1.5 lg:hidden'>
+          <span className='h-[2px] w-5 bg-white' />
+          <span className='h-[2px] w-5 bg-white' />
+          <span className='h-[2px] w-5 bg-white' />
         </button>
-      </nav>
-
-      {isOpen && (
-        <div className='fixed inset-0 bg-white z-50 px-6 py-8'>
-          <div className='flex justify-between items-center mb-10'>
-            <div className='flex items-center gap-2'>
-              <img
-                src='/logo.png'
-                alt='logo'
-                className='w-8 h-8 object-contain'
-              />
-              <h1 className='font-bold text-xl'>Your Logo</h1>
-            </div>
-
-            <button
-              onClick={() => setIsOpen(false)}
-              className='text-3xl leading-none'
-            >
-              ×
-            </button>
-          </div>
-
-          <ul className='flex flex-col gap-8 text-[16px] mb-8'>
-            <li>About</li>
-            <li>Service</li>
-            <li>Porfolio</li>
-            <li>Testimonials</li>
-            <li>FAQ</li>
-          </ul>
-
-          <button className='w-full bg-[#FF623E] text-white py-4 rounded-full text-sm font-semibold'>
-            Let&apos;s Talk
-          </button>
-        </div>
-      )}
-    </>
+      </div>
+    </header>
   );
 };
 

@@ -1,39 +1,90 @@
-import { services } from '../../data/services';
+const services = [
+  {
+    title: 'Web Development',
+    description: 'Build fast, scalable, and SEO-friendly websites.',
+    icon: '/Icon-web.png',
+  },
+  {
+    title: 'Mobile App Development',
+    description: 'Native & cross-platform apps tailored to user needs.',
+    icon: '/Icon-mobile.png',
+  },
+  {
+    title: 'UI/UX Design',
+    description: 'Delight users with intuitive and beautiful interfaces',
+    icon: '/Icon-ui.png',
+  },
+  {
+    title: 'Cloud Solutions',
+    description: 'Secure and flexible cloud infrastructure for your growth.',
+    icon: '/Icon-cloud.png',
+  },
+  {
+    title: 'Software Development',
+    description: 'Custom solutions built around your business logic.',
+    icon: '/Icon-software.png',
+  },
+  {
+    title: 'IT Infrastructure',
+    description: 'Scale your backend with reliable tech foundations.',
+    icon: '/Icon-it.png',
+  },
+  {
+    title: 'Cybersecurity Services',
+    description: 'Stay protected with enterprise-grade security.',
+    icon: '/Icon-security.png',
+  },
+  {
+    title: 'QA Solutions',
+    description: 'Ensure performance with rigorous testing frameworks.',
+    icon: '/Icon-QA.png',
+  },
+  {
+    title: 'IT Consulting & Support',
+    description: 'Make smarter tech decisions with expert guidance.',
+    icon: '/Icon-consult.png',
+  },
+];
+
 const Services = () => {
   return (
-    <section className='pt-12 pb-16 lg:py-20'>
-      <div className='text-center mb-12'>
-        <h2 className='text-[36px] lg:text-4xl font-bold leading-tight'>
-          Smart IT Solutions That <br />
-          Grow With You
-        </h2>
+    <section
+      id='service'
+      className='bg-black px-5 py-16 lg:px-[140px] lg:py-[80px]'
+    >
+      <div className='mx-auto flex max-w-[1160px] flex-col gap-12 lg:gap-[64px]'>
+        <div className='text-center'>
+          <h2 className='text-[28px] font-bold leading-tight text-white lg:text-[34px]'>
+            Smart IT Solutions That Grow With You
+          </h2>
 
-        <p className='text-gray-500 text-[16px] leading-[28px] mt-4'>
-          Tailored tech to boost efficiency, security, and results.
-        </p>
-      </div>
+          <p className='mx-auto mt-4 max-w-[560px] text-[13px] leading-6 text-white/45'>
+            Tailored tech to boost efficiency, security, and results.
+          </p>
+        </div>
 
-      <div className='max-w-[361px] lg:max-w-[1040px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-6'>
-        {services.map((service) => (
-          <div
-            key={service.id}
-            className='relative bg-gray-50 border border-gray-200 rounded-2xl px-6 pt-14 pb-6 min-h-[156px] overflow-visible'
-          >
-            <img
-              src={service.icon}
-              alt={service.title}
-              className='absolute -top-6 left-7 w-14 h-14 object-contain'
-            />
+        <div className='grid gap-x-5 gap-y-10 md:grid-cols-2 lg:grid-cols-3'>
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className='relative min-h-[130px] rounded-[14px] border border-white/10 bg-[#070C12] px-6 pb-5 pt-12'
+            >
+              <img
+                src={service.icon}
+                alt=''
+                className='absolute -top-5 left-6 h-[54px] w-[54px] object-contain'
+              />
 
-            <h3 className='font-bold text-[20px] leading-tight mb-4'>
-              {service.title}
-            </h3>
+              <h3 className='mt-4 text-[16px] font-bold leading-6 text-white'>
+                {service.title}
+              </h3>
 
-            <p className='text-gray-500 text-[16px] leading-[28px]'>
-              {service.description}
-            </p>
-          </div>
-        ))}
+              <p className='mt-2 text-[13px] leading-6 text-white/45'>
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
