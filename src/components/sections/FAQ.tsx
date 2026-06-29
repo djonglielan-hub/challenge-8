@@ -2,80 +2,69 @@ const faqs = [
   {
     question: 'What services do you offer?',
     answer:
-      'We provide custom web/app development, cloud solutions, UX/UI design, and more.',
-    open: true,
+      'We provide custom web/app development, cloud solutions, UI/UX design, and more.',
   },
   {
     question: 'How do I know if this is right for my business?',
-    answer: '',
-    open: false,
+    answer:
+      'Book a free consult — we’ll assess your goals and recommend the right approach.',
   },
   {
     question: 'How much does a project cost?',
-    answer: '',
-    open: false,
+    answer:
+      'Every project is different. Let’s talk about your needs to get a tailored estimate.',
   },
   {
     question: 'How long does it take?',
-    answer: '',
-    open: false,
+    answer:
+      'Depends on scope — but we always prioritize quality and deadlines.',
   },
   {
     question: 'Can I start with a small project first?',
-    answer: '',
-    open: false,
+    answer: 'Absolutely. We often begin with MVPs or pilot projects.',
   },
 ];
 
 const FAQ = () => {
   return (
-    <section
-      id='faq'
-      className='bg-black px-5 py-16 lg:px-[120px] lg:py-[80px]'
-    >
-      <div className='mx-auto flex max-w-[1200px] flex-col gap-[48px]'>
-        <div className='grid gap-6 border-b border-white/10 pb-10 lg:grid-cols-[1fr_320px] lg:items-center'>
-          <h2 className='max-w-[360px] text-[32px] font-bold leading-[1.25] text-white lg:text-[36px]'>
-            Need Help? Start
-            <br />
-            Here.
+    <section id='faq' className='bg-black px-4 py-14 lg:px-0 lg:py-[90px]'>
+      <div className='mx-auto max-w-[361px] lg:max-w-[720px]'>
+        <div className='text-left lg:text-center'>
+          <h2 className='text-[28px] font-bold leading-[34px] text-white lg:text-[34px] lg:leading-tight'>
+            Need Help? Start Here.
           </h2>
 
-          <p className='max-w-[260px] text-[15px] leading-7 text-white/50 lg:justify-self-end'>
+          <p className='mt-4 max-w-[310px] text-[12px] leading-[20px] text-white/45 lg:mx-auto lg:max-w-[560px] lg:text-[13px]'>
             Everything you need to know — all in one place.
           </p>
         </div>
 
-        <div className='grid gap-10 lg:grid-cols-[1fr_321px] lg:items-start'>
-          <div>
-            {faqs.map((faq) => (
-              <div key={faq.question} className='border-b border-white/10 py-5'>
-                <div className='flex items-center justify-between gap-6'>
-                  <h3 className='text-[18px] font-bold text-white'>
-                    {faq.question}
-                  </h3>
+        <div className='mt-8 divide-y divide-white/10 border-y border-white/10'>
+          {faqs.map((item, index) => (
+            <details
+              key={item.question}
+              open={index === 0}
+              className='group py-5'
+            >
+              <summary className='flex cursor-pointer list-none items-center justify-between gap-4'>
+                <h3 className='text-[13px] font-bold leading-[20px] text-white lg:text-[14px]'>
+                  {item.question}
+                </h3>
 
-                  <span className='text-[24px] leading-none text-white'>
-                    {faq.open ? '−' : '+'}
-                  </span>
-                </div>
+                <span className='text-[18px] font-light text-white group-open:hidden'>
+                  +
+                </span>
 
-                {faq.open && (
-                  <p className='mt-4 max-w-[820px] text-[15px] leading-7 text-white/45'>
-                    {faq.answer}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
+                <span className='hidden text-[18px] font-light text-white group-open:block'>
+                  −
+                </span>
+              </summary>
 
-          <aside className='w-full lg:w-[321px]'>
-            <img
-              src='/consultation.png'
-              alt='Free consultation'
-              className='w-full rounded-[22px] object-contain'
-            />
-          </aside>
+              <p className='mt-3 max-w-[310px] text-[12px] leading-[20px] text-white/45 lg:max-w-[620px]'>
+                {item.answer}
+              </p>
+            </details>
+          ))}
         </div>
       </div>
     </section>
